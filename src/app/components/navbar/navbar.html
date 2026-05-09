@@ -1,0 +1,33 @@
+<header class="main-header" [ngClass]="{ 'menu-open': isMenuOpen }">
+    <nav class="navbar">
+        <div class="logo">
+            <img ngSrc="logo.png" alt="Premium Car Logo" width="80" height="80" priority>
+        </div>
+
+        <!-- Desktop Links -->
+        <ul class="nav-links desktop-menu">
+            <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+            <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+            <li><a routerLink="/services" routerLinkActive="active">Services</a></li>
+            <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+        </ul>
+
+        <!-- Hamburger Button -->
+        <button class="hamburger" (click)="toggleMenu()" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" [ngClass]="{ 'show': isMenuOpen }" (click)="toggleMenu()">
+        <ul class="mobile-nav-links" (click)="$event.stopPropagation()">
+            <li><a routerLink="/" (click)="toggleMenu()">Home</a></li>
+            <li><a routerLink="/about" (click)="toggleMenu()">About</a></li>
+            <li><a routerLink="/services" (click)="toggleMenu()">Services</a></li>
+            <li><a routerLink="/contact" (click)="toggleMenu()">Contact</a></li>
+        </ul>
+    </div>
+</header>
+

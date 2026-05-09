@@ -1,0 +1,202 @@
+// Variables for a premium car brand
+$gold: #d4af37;
+$dark-charcoal: rgba(26, 26, 26, 0.9);
+$glass-bg: rgba(255, 255, 255, 0.1);
+$glass-border: rgba(255, 255, 255, 0.2);
+$text-light: #070707;
+$transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0px;
+    background: transparent;
+    transition: $transition-smooth;
+
+    &.menu-open {
+        background: $dark-charcoal;
+    }
+}
+
+.navbar {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $glass-bg;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid $glass-border;
+    border-radius: 50px;
+    padding: 10px 30px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    position: relative;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    
+    img {
+        height: 50px;
+        width: auto;
+        filter: brightness(1.2);
+        transition: $transition-smooth;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    li {
+        a {
+            text-decoration: none;
+            color: $text-light;
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: $transition-smooth;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: $gold;
+                transition: $transition-smooth;
+            }
+
+            &:hover, &.active {
+                color: $gold;
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// Hamburger Button
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+
+    .bar {
+        width: 100%;
+        height: 2px;
+        background-color: $text-light;
+        transition: $transition-smooth;
+    }
+}
+
+// Mobile Menu Overlay
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: $dark-charcoal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: $transition-smooth;
+    z-index: 999;
+
+    &.show {
+        right: 0;
+    }
+
+    .mobile-nav-links {
+        list-style: none;
+        text-align: center;
+        padding: 0;
+
+        li {
+            margin: 25px 0;
+
+            a {
+                text-decoration: none;
+                color: $text-light;
+                font-size: 28px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                transition: $transition-smooth;
+
+                &:hover {
+                    color: $gold;
+                }
+            }
+        }
+    }
+}
+
+// Responsive Queries
+@media (max-width: 768px) {
+    .main-header {
+        padding: 0 0px;
+        height: 70px;
+    }
+
+    .desktop-menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    // Hamburger Animation
+    .menu-open {
+        .hamburger {
+            .bar:nth-child(1) {
+                transform: translateY(9.5px) rotate(45deg);
+            }
+            .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .bar:nth-child(3) {
+                transform: translateY(-9.5px) rotate(-45deg);
+            }
+        }
+    }
+
+    .navbar {
+        border-radius: 20px;
+        padding: 8px 20px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+}

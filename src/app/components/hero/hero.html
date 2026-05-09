@@ -1,0 +1,34 @@
+<div class="hero-container">
+    <!-- CINEMATIC OVERLAY -->
+    <div class="hero-overlay"></div>
+
+    <!-- HERO TEXT -->
+    <div class="heroText" [style.opacity]="textOpacity" [style.transform]="'translate(-50%, ' + textTransform + 'px)'">
+        <h1>PORSCHE</h1>
+        <p>Engineered for Emotion</p>
+    </div>
+
+    <!-- CAR SECTION -->
+    <div class="car-wrapper" [style.transform]="'translate(calc(-50% + ' + carTransformX + 'px), calc(-50% + ' + carTransformY + 'px))'">
+        <!-- PORSCHE BODY -->
+        <img
+            class="car-body"
+            src="porshe-body.png"
+            alt="Porsche Body"
+        >
+
+        <!-- ROTATING REAR WHEEL -->
+        <img
+            class="rear-wheel"
+            src="wheel.png"
+            alt="Porsche Wheel"
+            [style.transform]="'rotate(' + wheelRotation + 'deg)'"
+        >
+    </div>
+
+    <!-- SCROLL INDICATOR -->
+    <div class="scroll-indicator" [style.opacity]="textOpacity">
+        <span>Scroll</span>
+        <div class="line"></div>
+    </div>
+</div>
