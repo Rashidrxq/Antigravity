@@ -54,7 +54,7 @@ export class Garage implements AfterViewInit, OnDestroy {
       name: 'SF90 STRADALE',
       year: '2023',
       color: 'Rosso Corsa',
-      image: '/about.jpg',
+      image: '/garage01.jpg',
       bgLighting: 'rgba(255, 40, 0, 0.1)',
       details: [
         { label: 'Engine', value: 'V8 Hybrid' },
@@ -68,7 +68,7 @@ export class Garage implements AfterViewInit, OnDestroy {
       name: 'REVUELTO',
       year: '2024',
       color: 'Bianco Monocerus',
-      image: '/porshe.jpg',
+      image: '/garage02.jpg',
       bgLighting: 'rgba(0, 255, 150, 0.08)',
       details: [
         { label: 'Engine', value: 'V12 Hybrid' },
@@ -82,7 +82,7 @@ export class Garage implements AfterViewInit, OnDestroy {
       name: 'VALKYRIE',
       year: '2023',
       color: 'Racing Green',
-      image: '/about.jpg',
+      image: '/garage03.jpg',
       bgLighting: 'rgba(0, 102, 51, 0.15)',
       details: [
         { label: 'Engine', value: '6.5L V12' },
@@ -96,7 +96,7 @@ export class Garage implements AfterViewInit, OnDestroy {
       name: 'UTOPIA',
       year: '2024',
       color: 'Exposed Carbon',
-      image: '/porshe.jpg',
+      image: '/garage10.jpg',
       bgLighting: 'rgba(50, 100, 255, 0.1)',
       details: [
         { label: 'Engine', value: '6.0L V12 TT' },
@@ -110,7 +110,7 @@ export class Garage implements AfterViewInit, OnDestroy {
       name: 'CHIRON',
       year: '2022',
       color: 'Nocturne Black',
-      image: '/about.jpg',
+      image: '/garage12.jpg',
       bgLighting: 'rgba(200, 200, 255, 0.1)',
       details: [
         { label: 'Engine', value: '8.0L W16' },
@@ -124,7 +124,7 @@ export class Garage implements AfterViewInit, OnDestroy {
       name: 'JESKO',
       year: '2024',
       color: 'Crystal White',
-      image: '/porshe.jpg',
+      image: '/garage11.jpg',
       bgLighting: 'rgba(255, 200, 50, 0.1)',
       details: [
         { label: 'Engine', value: '5.0L V8 TT' },
