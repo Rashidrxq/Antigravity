@@ -26,6 +26,7 @@ $body-font: 'Inter', sans-serif;
     margin: 0;
     text-transform: uppercase;
     letter-spacing: -2px;
+    will-change: transform, opacity;
 }
 
 .about-main {

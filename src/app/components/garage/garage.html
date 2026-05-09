@@ -1,0 +1,58 @@
+<section class="garage-viewport" #garageSection>
+    <!-- FIXED AMBIENT ENVIRONMENT -->
+    <div class="fixed-garage-env">
+        <div class="matte-walls"></div>
+        <div class="textured-floor">
+            <!-- Path Marker Lights -->
+            <div class="path-lights">
+                <div class="dot" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]"></div>
+            </div>
+        </div>
+        <div class="global-ambient-glow" [style.background]="activeBgLighting"></div>
+    </div>
+
+    <!-- HORIZONTAL SHOWROOM TRACK -->
+    <div class="story-track" #horizontalTrack>
+        <div class="car-bay" *ngFor="let bay of bays; let i = index">
+            
+            <!-- OVERHEAD SOFT-BOX LIGHT -->
+            <div class="soft-box-container">
+                <div class="soft-box-light">
+                    <div class="glow-panel"></div>
+                </div>
+            </div>
+
+            <!-- PARALLAX CAR LAYER -->
+            <div class="car-container">
+                <div class="car-wrapper">
+                    <img [src]="bay.image" [alt]="bay.name" class="main-car-img">
+                    <div class="showroom-reflection">
+                        <img [src]="bay.image" alt="reflection">
+                    </div>
+                </div>
+            </div>
+
+            <!-- FLOATING UI OVERLAY -->
+            <div class="bay-ui">
+                <div class="bay-header">
+                    <span class="bay-number">POS // 0{{ i + 1 }}</span>
+                    <h1 class="car-model">{{ bay.name }}</h1>
+                    <h2 class="brand-name">{{ bay.brand }}</h2>
+                </div>
+
+                <div class="spec-grid">
+                    <div class="detail-card" *ngFor="let detail of bay.details">
+                        <span class="label">{{ detail.label }}</span>
+                        <span class="value">{{ detail.value }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION HINT -->
+    <div class="scroll-hint">
+        <div class="indicator"></div>
+        <span class="label">SCROLL TO POSITION VEHICLE</span>
+    </div>
+</section>

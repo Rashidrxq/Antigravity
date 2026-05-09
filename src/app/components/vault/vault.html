@@ -1,0 +1,31 @@
+<section class="vault-section" #vaultSection>
+    <div class="vault-container">
+        <header class="vault-header">
+            <span class="sub-title">Curation</span>
+            <h2 class="title">THE VAULT</h2>
+        </header>
+
+        <div class="asset-grid">
+            <div *ngFor="let asset of assets; let i = index" 
+                 class="asset-card" 
+                 [ngClass]="'item-' + (i + 1)">
+                <div class="image-wrapper">
+                    <img [src]="asset.image" [alt]="asset.title">
+                    <div class="card-overlay">
+                        <div class="provenance-box">
+                            <span class="label">Provenance</span>
+                            <p>{{ asset.provenance }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="asset-details">
+                    <div class="meta">
+                        <span class="category">{{ asset.category }}</span>
+                        <span class="year">{{ asset.year }}</span>
+                    </div>
+                    <h3 class="asset-title">{{ asset.title }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
